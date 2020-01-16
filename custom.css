@@ -1,0 +1,191 @@
+
+
+*{
+box-sizing:border-box;
+}
+
+.container {
+    position: relative;
+
+  }
+  
+
+*
+{
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+}
+.header{
+    background-image:linear-gradient(to right,gray,rgb(255, 94, 0));
+    padding: 10px 0;
+
+}
+.logo img{
+  width:100%;
+}
+.nav-link{
+    font-size:20px;
+    color:black;
+    margin:2px;
+    font-weight:bolder;
+}
+.navbar-nav{
+    text-align:right;
+
+}
+.tabs-bar .navbar-toggler{
+    padding:20px 0 ;
+    outline:none;
+    border:none;
+	
+
+}
+
+nav{	    background-image:linear-gradient(to right,gray,rgb(255, 94, 0));}
+
+
+
+
+
+.timereversesection{background:url(../images/displaytime-bg.jpg) rgb(0,0,0,0.85) no-repeat top center; background-size:cover;background-blend-mode: overlay;padding: 30px 0;}
+.timereversesection h2{text-align: center;font-weight: 700;font-size: 30px; text-transform: uppercase;color: #fff;}
+.timereversesection .line:before{background:#ec2028; }
+.timecontent label {
+    color: #fff;
+    padding: 0 0 15px;
+}
+.timecontent p {
+    padding: 15px;
+    border: 1px solid #ec2028;
+    margin: 25px 0 0;
+    color: #fff;
+}
+.reversetext {
+    color: #ec2028;
+    font-weight: bold;
+    font-style: italic;
+}
+.datetime p {
+    color: #fff;
+    padding: 20px 0 0;
+}
+.datetime h3 {
+    color: #ec2028;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.about-wrap{
+    background-color:black;
+	
+}
+.about-wrap p{
+   font-size:20px;
+    background-color:black;
+    color:white;
+   padding-right:35px;
+  
+}
+
+.list-add{
+    text-align:center;
+    color:white;
+    background-color:black;
+    
+}
+.menu-wrap h1{
+    text-align:left;
+   margin-bottom: 20px;;
+}
+.menu-wrap {
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/indianfood.jpg);
+    background-size:cover;
+    background-position:center;
+    padding-top: 30px;
+    padding-bottom:30px ;
+}
+.indian-tasks{
+    color:white;
+    font-size:20px;
+}
+.feed-back{
+	background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(images/castle.gif);
+	background-size:cover;
+    background-position:right;
+	padding-top:200px;
+	padding-bottom:200px;
+}
+.databaind-feed1 p{
+	padding-top:60px;
+}
+#feedback-form{
+	 background-color: lightgrey;
+     width: 300px;
+     border: 2px solid brown;
+     padding: 50px;
+     margin: 20px;
+}
+.menu-wrap h5{
+    color:white;
+    font-weight:bold;
+    text-align:right;
+}
+
+.list-add p{
+    padding-bottom: 25px;
+}
+.menu-wrap1 h1{
+    color:white;
+    font-weight:bold;
+}
+.chinese-tasks{
+    color:white;
+    font-size:20px;
+}
+.Indian-Menu h1{
+    padding-right:25px;
+}
+
+ .recipe-list {
+    text-align: left;
+    width: 20%;
+    margin: 0 auto;
+}
+.list-add button{background:orangered; padding:2px 10px;border:none;color:#fff;}
+
+
+ .is-loading{background:orangered; color: #ffffff; padding: 25px; border: 1px solid #eee;border-radius:20px;}
+ 
+.tabnew{
+	   border:2px solid white;color:white;font-size:30px;
+	  text-align:center;height:50px;
+	  
+	 
+  }
+  
+ .btn_default{
+	margin-left:150px;
+	height:50px;
+	width:100px;
+}
+ .btn-warning{
+	 
+	 border-radius:5px;
+	 height:50px:
+	 width:100%;
+	 
+ }
+ 
+ .modal is-active{
+	 background:white;
+ }
+ .modal-content
+ {
+	 background:white;
+ }

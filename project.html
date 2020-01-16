@@ -1,0 +1,553 @@
+<html>
+
+<head>
+  <title>Vue js project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css" rel="stylesheet"> 
+
+  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link href="custom.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container-fluid">
+  <!-----link-->
+  <section id="header">
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-3">
+            <a class="logo" href="#"><img src="images/hotel_logo.jpg" style="height:100%;" class="img-responsive"></a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-9">
+            <div class="tabs-bar">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#list-adding"><b>About us</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>
+                          Menu</b>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#Class-binding1">Indian Recipes</a>
+                        <a class="dropdown-item" href="#Class-binding2">Chinese Recipes</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#Deliver"><b>HomeDelivery</b></a>
+                    </li>
+					<li class="nav-item">
+					<a class="nav-link" href="#databind" ><b >Book a table</b></a>
+					</li>
+                  </ul>
+                
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+	</section>
+	
+	 
+  
+
+  <div class="row">
+  
+  <!-- databinding-->
+  <div class="col-sm-6">
+
+  <form  style="border-style: solid;height:500px;  background-image: url(D:/vueproject/images/cafe1.gif);background-size:cover">
+  
+  <div id="data"><br> <p style="color:black;font-family:bold;font-size:25px;"> Your Name Please.. </p>
+ <center>  <input type="text" id="databind" v-model="message" placeholder="Type here databinding "style="text-align:center"> </center>
+   
+  <center>   <h2  style="color:orangered;text-align:center;padding:50px 0 0;font-weight:20px;font-family:bold;font-size:40px;">Welcome to  EAT&REPEAT  {{ message }}!!!</h2> </center>
+ </div> 
+<br><br>
+
+<!--component -communication  event dispatcher-->
+
+<div class="communication-bg">
+  <div id="communication-wrap2" class="container">
+      <div class="row">
+       <!--   <div class="col-md-12 col-sm-12 col-12">-->
+		  
+		  <div class="col-sm-8">
+		  
+		  <form class="form-horizontal" style="margin-left:100px;" >
+    <div class="form-group">
+      <label class="control-label col-sm-4" for=>Date of attending</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="email" placeholder="mm/dd/yy" name="email">
+      </div>
+    </div><br>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="pwd">No of guest</label>
+      <div class="col-sm-4">          
+        <input type="number" class="form-control" id="pwd"  name="pwd">
+      </div>
+    </div><br>
+    <div class="form-group"> 
+      <label class="control-label col-sm-4" for="pwd">Table Type</label>
+	
+    
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember">personal cabin</label>
+		     <label><input type="checkbox" name="remember">open garden</label>
+			 		     <label><input type="checkbox" name="remember">general</label>
+
+        </div>
+     
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+	    <coupon2 @applied="onCouponApplied" ></coupon2> <!-- Child Component -->
+              <h4 v-if="couponApplied">You used a coupon!</h4> <!-- Parent Component -->
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+          
+
+          </div>
+      </div>
+  </div>
+</div>
+  
+  
+  </div>
+  
+  
+    <!--carousel-->
+  <div class="col-sm-6">
+  
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="D:/vueproject/images/veg.jpg" class="img-responsive" alt="Los Angeles" style="width:100%;height:500px;">
+        <div class="carousel-caption">
+          <h3>“Good food ends with good talk.” </h3>
+          <p> “Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious.”
+
+
+</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="D:/vueproject/images/food.jpg" alt="Chicago" class="img-responsive"style="width:100%;height:500px;" >
+        <div class="carousel-caption">
+             <h3>“Good food ends with good talk.” </h3>
+          <p> “Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious.”
+
+
+</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="D:/vueproject/images/juice.jpg" alt="New York" class="img-responsive"style="width:100%;height:500px;" >
+        <div class="carousel-caption">
+             <h3>“Good food ends with good talk.” </h3>
+          <p> “Pull up a chair. Take a taste. Come join us. Life is so endlessly delicious.”
+
+
+</p>
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  
+  </div>
+  
+  </div>
+  
+<!--reverse text-->
+<div class="timereversesection" id="timereverse-wrap">
+        <div class="container">
+            <h2>Type your Food quotes</h2>
+            <div class="line"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-12">
+                    <div class="timecontent">
+                        <label>Enter the text for reserved </label>
+                        <input type="text" class="form-control" v-model="message">
+                        <p>Reversed Value is: <span class="reversetext">{{reversedMessage}}</span></p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-12">
+                    <div class="datetime">
+                        <h3>Date and Time Display</h3>
+                        <p v-text="new Date()"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ 
+  
+  <!--list event-->
+  
+   
+
+  <div class="about-wrap" id="list-adding">
+    <div id="About-main">
+      <div class="container" 
+>
+            <h2 style="color:orangered;text-align:center;padding:50px 0 0;">Aboutus</h2>
+        <div class="row" ">
+          <div class="col-6">
+           
+            <p style="color:white"> We are serving heathly and tasty food for the past 4 years,We are stepping into our 5th year.So we are
+              conducting "Foodie" competition,please add your best recipe idea  We are serving heathly and tasty food for the past 4 years,We are stepping into our 5th year.So we are
+              conducting "Foodie" competition,please add your best recipe idea We are serving heathly and tasty food for the past 4 years,We are stepping into our 5th year.So we are
+              conducting "Foodie" competition,please add your best recipe ideaconducting "Foodie" competition,please add your best recipe idea
+
+  </p>
+          </div>
+          <div class="col-6">
+            <img src="images/r1.jpg" style="width: 100%;" class="img-responsive">
+          </div>
+        </div>
+		
+		 <!-- Add team members using list-->
+ 
+ 
+ 
+  </div>
+  </div>
+  
+   
+  
+  
+
+  <!-------menu using class binding----->
+  <div class="menu-wrap" id="Class-binding1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-12">
+          <div id="Indian-Menu">
+            <h1 v-bind:title="title"><span style="font-weight:bold;color:darkgreen;font-family:snap ITC;">IN</span><span
+                style="font-weight:bold;color:white;font-family:snap ITC;">DI</span><span
+                style="font-weight:bold;color:ORANGE;font-family:snap ITC;">AN</span><span
+                style="color:white;font-family:snap ITC ;"> Recipes</span>
+            </h1>
+
+
+          </div>
+          <!-----data binding with vue components and slot-->
+          <div id="recipe-tasks" class="indian-tasks">
+
+            <task-slot>Breakfast-recipes</task-slot>
+            <task-slot>Fries</task-slot>
+            <task-slot>Pot biryani</task-slot>
+			<task-slot>Dinner-recepies</task-slot>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-sm-12 col-12">
+          <div class="menu-wrap1" id="Class-binding2">
+
+          <div id="Chinese-menu">
+            <h1 v-bind:title="title-menu"><span style="color:red;font-family:snap ITC;">CHINESE</span><span
+                style="font-family:snap ITC;">Recipes</span></h1>
+          </div>
+          <div id="recipe-task1" class="chinese-tasks">
+            <task-slot>Noodles</task-slot>
+            <task-slot>Pasta</task-slot>
+            <task-slot>Veg-soup</task-slot>
+			  <task-slot>Fresh-juice</task-slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+ <!----About us/adding recipes using list-->
+
+  <div class="about-wrap" id="list-adding" style="background-color:black">
+    <div id="About-main" >
+      <div class="container" >
+        
+        <div class="row" >
+
+          <div class="col-6">
+            <h2 style="color:orangered;text-align:center;padding:50px 0 0;">Add your Recipes</h2>
+            <div id="recipe-add" class="list-add">
+              <div class="recipe-list">
+                <ol>
+                  <li v-for="recipe in recipes" v-text="recipe"></li>
+                </ol>
+              </div><br>
+              <input type="text" id="input1" style="color:black" placeholder="list Event listener">
+              <button type="button" id="button" >Add Recipes</button>
+              <p> we will reach you soon...</p>
+            </div>
+          </div>
+		  
+		  
+
+		  <div class="col-6"style="  padding-top: 20px;
+  ">
+		<!--  <div id="offer">
+    <button v-bind:title="title"style="background:orangered; padding:2px 10px;border:none;color:#fff;border-radius:5px">Click Me!<br>Atribute binding</button>
+ </div>-->
+ <br>
+ <img src="D:/vueproject/images/offer.gif" class="img-circle" style="height:200px;width:100%">
+ 
+
+
+ 
+ 
+ 
+ </div>
+ 	  
+        </div>
+		
+		<center>
+  <div id="new">
+    <button :class="{'is-loading' : isLoading}" @click = "toggleClass" ><h5 id ="btn">Flat 50% off<br>class binding</h5></button>
+</div>
+		  
+	</center>
+      </div>
+    </div>
+  </div>
+  
+ 
+<!--message component--> 
+
+
+ 
+
+<!--tabs-->
+
+
+<div class="container">
+<div class="tabs-bg" >
+  <div id="tab-wrap" >
+      
+                  <h2 style="color:orangered;text-align:center;padding:50px 0 0;">Our Gallery</h2>
+
+          <tabs>
+
+            <tab   name="Food" :selected="true">
+			<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/burger.jpg" style="height:170px;width:100%;"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/biriyani.jpg" style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/kfc.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/fish.jpg"style="height:170px;width:100%"></div>
+			
+			</div>
+			<br>
+			<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/cake.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/fruit.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/chips.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/snack.jpg"style="height:170px;width:100%"></div>
+			
+			</div>
+			
+            </tab>
+            <tab name="Rooms">
+			
+			
+			<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/chair.jpg" style="height:170px;width:100%;"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/double.jpg" style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/tab.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/bed.jpg"style="height:170px;width:100%"></div>
+			
+			</div>
+			<br>
+			<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/sofa.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/hall.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/room.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/meeting.jpg"style="height:170px;width:100%"></div>
+			
+			</div>
+			
+            </tab>
+            <tab name="Kitchen">
+<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/stiring.jpg" style="height:170px;width:100%;"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/cutting.jpg" style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/chef.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/storeroom.jpg"style="height:170px;width:100%"></div>
+			
+			</div>
+			<br>
+			<div class="row">
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/fry.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/hotchips.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/kitchen.jpg"style="height:170px;width:100%"></div>
+			<div  class="col-sm-3"> <img src= "D:/vueproject/images/pan.jpg"style="height:170px;width:100%"></div>
+			
+			</div>            </tab>
+          </tabs>
+  </div>
+</div>
+</div>
+<br>
+
+<!--modal-->
+
+<div class="container-fluid"style="    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/indianfood.jpg);  padding-top: 30px;
+    padding-bottom:30px ;">
+
+ <div class="row">
+<div class="col-sm-6">
+
+<div class="communication-bg1" style="margin-left:50px;">
+      <div id="singleusecomponents-wrap" class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <progress-view inline-template>
+              <div>
+                <h4 style="padding-bottom: 20px;color:red;padding-left: 40px;">Rating is {{completionRate}} stars</h4>
+              
+			   
+			     <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+			  <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+			   <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+			    <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+				 <span class="glyphicon glyphicon-star" style="color:yellow"></span>
+			 <button @click="completionRate+=1" style="border: none; padding: 10px 20px;color: #ffffff;background:orangered; padding:2px 10px;border:none;color:#fff;">Rate here..single use component</button>
+           
+			  </div>
+            </progress-view>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+<div class="col-sm-6">
+
+
+<div class="modal-bg"
+">
+
+    <div id="modal-wrap" class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-6">
+              <modal v-if="showModal" @close= "showModal = false"></modal>
+             <br> <button @click = "showModal = true" class="btn-warning"style="background: #000; padding:2px 10px;border:2px solid white;color:#ffffff;border-radius:5px;width:100%;"><h4> Modal <br><marquee direction="left">Thank you!!!&nbsp;Visit again!!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thank you!!!Visit again!!!</marquee></h4></button>
+       <br>
+	   </div>
+		
+      </div>
+    </div>
+ 
+
+ 
+
+ </div>
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+<br>
+<div id="message-wrap" class="container" style="  padding-top: 10px;
+    padding-bottom:30px ;">
+    <div class="row">
+	        <h2 style="color:orangered;text-align:center;margin-left:500px;">Description</h2>        
+
+        <div class="col-md-12 col-sm-12 col-12">
+          
+          <message title="A/C Rooms" body="AC Room. Offers. Basic Deal. Last Minute Deal. Pay only 10 % to get Booking Confirmation. Exclusive 24 hrs Check In - Check Out. Location. Restaurant. "></message>
+          <message title="Conference hall" body="AC Room. Offers. Basic Deal. Last Minute Deal. Pay only 10 % to get Booking Confirmation. Exclusive 24 hrs Check In - Check Out. Location. Restaurant. "></message>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-sm-4">
+
+<br>
+            <br>  <input type="text" id="input1" style="color:black;height:40px;margin-left:30px;"placeholder="feedback here..."><br><br>
+           <button type="button" id="button"style="background:orangered; padding:2px 10px;border:none;color:#fff;border-radius:5px;width:100px;margin-left:70px;" >submit</button>
+  
+
+</div>
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+   <script src="vuejsfile.js"></script>
+
+
+
+</body>
+
+</html>
